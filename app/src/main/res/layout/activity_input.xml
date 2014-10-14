@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.zhan.activity.Input">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView_name"
+                android:text="@string/name"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:fontFamily="bold"
+                android:textColor="@color/green"
+                android:textSize="20dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/editText_name"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView_category"
+                android:text="@string/category"
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:fontFamily="bold"
+                android:textColor="@color/green"
+                android:textSize="20dp"
+                android:layout_height="wrap_content"/>
+
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView_price"
+                android:text="@string/price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:fontFamily="bold"
+                android:textColor="@color/green"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/textView_sign"
+                android:text="+"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="bold"
+                android:textColor="@color/green"
+                android:textSize="30dp"/>
+
+            <EditText
+                android:id="@+id/editText_price"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:hint="@string/dollar"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView_date"
+                android:text="@string/date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:fontFamily="bold"
+                android:textColor="@color/green"
+                android:textSize="20dp"/>
+
+
+
+            <Button
+                android:id="@+id/btn_selectDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/select_date"
+                android:onClick="showDatePickerDialog" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_done"
+                android:text="@string/add"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:layout_width="270dp"
+                android:layout_height="60dp"
+                android:background="@drawable/buttonshape"
+                android:onClick="add"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#2ecc71</color>
+    <color name="red">#c0392b</color>
+    <color name="background">#d9d9d9</color>
+    <color name="list_divider">#d9d9d9</color>
+
+    <!-- For navigation drawer -->
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#2ecc71</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+</resources>
