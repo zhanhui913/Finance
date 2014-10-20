@@ -10,10 +10,7 @@ import android.util.Log;
 import com.zhan.models.Category;
 import com.zhan.models.Item;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Zhan on 2014-10-12.
@@ -111,7 +108,7 @@ public class Database extends SQLiteOpenHelper{
      * @param id The id of the Category
      * @return Category
      */
-    public Category getCategory(int id){
+    public Category getCategoryById(int id){
         SQLiteDatabase db = this.getWritableDatabase();
 
         String[] TOUR_COLUMNS = {CATEGORY_ID,CATEGORY_TITLE};
@@ -140,6 +137,42 @@ public class Database extends SQLiteOpenHelper{
         Log.d(TABLE_CATEGORY,"get Category "+category.toString());
         return category;
     }
+
+    /**
+     * Get the Category with the corresponding title from the database
+     * @param title The title of the Category
+     * @return Category
+     */
+    public Category getCategoryByTitle(String title){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String[] TOUR_COLUMNS = {CATEGORY_ID,CATEGORY_TITLE};
+
+        Cursor cursor = db.query(TABLE_CATEGORY,     //Table
+                TOUR_COLUMNS,                        //Column names
+                " title = ?",                        // Selections
+                new String[]{title},    // selections argument
+                null,                                // group by
+                null,                                // having
+                null,                                // order by
+                null);                               // limit
+
+        Category category = new Category();
+        if(!(cursor.moveToFirst()) || (cursor.getCount()==0)){
+            Log.d(TABLE_CATEGORY,"GetCategory returns empty for title = "+title);
+        }else{
+            Log.d(TABLE_CATEGORY,"GetCategory returns something for title = "+title);
+
+            category.setId(cursor.getInt(0));
+            category.setTitle(cursor.getString(1));
+        }
+
+        cursor.close();
+        db.close();
+        Log.d(TABLE_CATEGORY,"get Category "+category.toString());
+        return category;
+    }
+
 
     /**
      * Get all Categories from the database
@@ -268,11 +301,11 @@ public class Database extends SQLiteOpenHelper{
             item.setId(cursor.getInt(0));
             item.setCategory(new Category(
                     cursor.getInt(1),
-                    getCategory(cursor.getInt(1)).getTitle()
-            ));
+                    getCategoryById(cursor.getInt(1)).getTitle())
+            );
             item.setTitle(cursor.getString(2));
             item.setType(cursor.getString(3));
-            item.setDate(convertStringToDate(cursor.getString(4)));
+            item.setDate(cursor.getString(4));
             item.setPrice(cursor.getDouble(5));
         }
 
@@ -301,11 +334,11 @@ public class Database extends SQLiteOpenHelper{
                 item.setId(cursor.getInt(0));
                 item.setCategory(new Category(
                         cursor.getInt(1),
-                        getCategory(cursor.getInt(1)).getTitle()
-                ));
+                        getCategoryById(cursor.getInt(1)).getTitle())
+                );
                 item.setTitle(cursor.getString(2));
                 item.setType(cursor.getString(3));
-                item.setDate(convertStringToDate(cursor.getString(4)));
+                item.setDate(cursor.getString(4));
                 item.setPrice(cursor.getDouble(5));
 
                 //Add Item to arraylist
@@ -333,7 +366,7 @@ public class Database extends SQLiteOpenHelper{
         values.put(ITEM_CATEGORY_ID, item.getCategory().getId());
         values.put(ITEM_TITLE, item.getTitle());
         values.put(ITEM_TYPE, item.getType());
-        values.put(ITEM_DATE, convertDateToString(item.getDate()));
+        values.put(ITEM_DATE, item.getDate());
         values.put(ITEM_PRICE, item.getPrice());
 
         int i = db.update(TABLE_ITEM,   // Table
@@ -362,7 +395,7 @@ public class Database extends SQLiteOpenHelper{
         Log.d(TABLE_ITEM,"deleting item "+item.toString());
     }
 
-
+/* NOT SURE IF STILL NEEDED
     public Date convertStringToDate(String stringDate){
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyy");
         Date date = null;
@@ -381,5 +414,5 @@ public class Database extends SQLiteOpenHelper{
 
         return stringDate;
     }
-
+*/
 }

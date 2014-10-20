@@ -1,20 +1,17 @@
 package com.zhan.models;
 
-import java.util.Date;
-
 /**
  * Created by Zhan on 2014-10-12.
  */
 public class Item {
     private int id;
-    private String title,type;
-    private Date date;
+    private String title,type,date;
     private Category category;
     private Double price;
 
     public Item(){}
 
-    public Item(int aId, String aTitle, String aType, Date aDate, Category aCategory, Double aPrice){
+    public Item(int aId, String aTitle, String aType, String aDate, Category aCategory, Double aPrice){
         this.id = aId;
         this.title = aTitle;
         this.type = aType;
@@ -36,7 +33,7 @@ public class Item {
         return this.type;
     }
 
-    public Date getDate(){
+    public String getDate(){
         return this.date;
     }
 
@@ -61,7 +58,7 @@ public class Item {
         this.type = aType;
     }
 
-    public void setDate(Date aDate){
+    public void setDate(String aDate){
         this.date = aDate;
     }
 

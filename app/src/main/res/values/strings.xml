@@ -12,7 +12,9 @@
     <string name="action_example">Example action</string>
     <string name="expense">Expense</string>
     <string name="income">Income</string>
-    <string name="add">Add</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="add_income">Add Income</string>
+    <string name="add_category">Add Category</string>
     <string name="name">Name</string>
     <string name="category">Category</string>
     <string name="price">Price</string>
@@ -26,7 +28,7 @@
     <string-array name="nav_drawer_items">
         <item>Home</item>
         <item>Category</item>
-        <item>People</item>
+        <item>Item</item>
         <item>Photos</item>
         <item>Communities</item>
         <item>What\'s Hot</item>
@@ -37,7 +39,7 @@
     <array name="nav_drawer_icons">
         <item>@drawable/ic_home</item>
         <item>@drawable/ic_category</item>
-        <item>@drawable/ic_people</item>
+        <item>@drawable/ic_item</item>
         <item>@drawable/ic_photos</item>
         <item>@drawable/ic_communities</item>
         <item>@drawable/ic_whats_hot</item>
