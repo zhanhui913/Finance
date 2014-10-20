@@ -19,7 +19,7 @@ import com.zhan.adapter.NavDrawerListAdapter;
 import com.zhan.finance.R;
 import com.zhan.fragment.CategoryFragment;
 import com.zhan.fragment.CommunitiesFragment;
-import com.zhan.fragment.FindPeopleFragment;
+import com.zhan.fragment.ItemFragment;
 import com.zhan.fragment.HomeFragment;
 import com.zhan.fragment.PhotosFragment;
 import com.zhan.fragment.WhatsHotFragment;
@@ -180,7 +180,7 @@ public class Main extends Activity {
                 currentFragment = new CategoryFragment();
                 break;
             case 2:
-                currentFragment = new FindPeopleFragment();
+                currentFragment = new ItemFragment();
                 break;
             case 3:
                 currentFragment = new PhotosFragment();
