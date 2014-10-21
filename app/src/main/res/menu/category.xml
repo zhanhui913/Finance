@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Main" >
+    <item android:id="@+id/action_category_filter_day"
+        android:title="@string/action_category_filter_day"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_category_filter_week"
+        android:title="@string/action_category_filter_week"
+        android:orderInCategory="101"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_category_filter_month"
+        android:title="@string/action_category_filter_month"
+        android:orderInCategory="102"
+        android:showAsAction="never" />
+</menu>

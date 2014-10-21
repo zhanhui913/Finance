@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/item_item_title"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
         android:text="Title"
-        android:layout_alignParentBottom="true"
-        android:padding="15dp"/>
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/item_item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="Category"
+        android:layout_below="@+id/item_item_title"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/item_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text="Price"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/item_item_title"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"/>
+
+    <TextView
+        android:id="@+id/item_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:text="Date"
+        android:gravity="right"
+        android:layout_below="@+id/item_item_price"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/item_item_category"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
+
+</RelativeLayout>
+
+

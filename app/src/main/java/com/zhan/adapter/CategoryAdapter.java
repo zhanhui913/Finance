@@ -60,6 +60,4 @@ public class CategoryAdapter extends BaseAdapter{
 
         return convertView;
     }
-
-
 }

@@ -135,6 +135,7 @@ public class Input extends Activity {
         EditText priceEditText = (EditText)findViewById(R.id.editText_price);
         price = priceEditText.getText().toString();
         Toast.makeText(getApplicationContext(), "Added price = " + price, Toast.LENGTH_SHORT).show();
+
         //Fetch Date
         Button dateButton = (Button)findViewById(R.id.btn_selectDate);
         date = dateButton.getText().toString();

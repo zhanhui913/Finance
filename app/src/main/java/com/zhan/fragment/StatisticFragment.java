@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import com.zhan.finance.R;
 
 
-public class PhotosFragment extends Fragment {
+public class StatisticFragment extends Fragment {
 	
-	public PhotosFragment(){}
+	public StatisticFragment(){}
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

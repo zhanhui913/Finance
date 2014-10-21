@@ -1,9 +1,12 @@
 package com.zhan.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.zhan.activity.EditCategory;
 import com.zhan.adapter.CategoryAdapter;
 import com.zhan.db.Database;
 import com.zhan.finance.R;
@@ -95,6 +99,11 @@ public class CategoryFragment extends Fragment {
                 String title = c.getTitle();
 
                 Toast.makeText(getActivity().getApplicationContext(), "You clicked "+title, Toast.LENGTH_SHORT).show();
+
+                //Open editCategory activity
+                Intent intent = new Intent(view.getContext(), EditCategory.class);
+                intent.putExtra("SelectedCategory",title);
+                startActivity(intent);
             }
         });
     }
@@ -143,5 +152,19 @@ public class CategoryFragment extends Fragment {
         } catch (Exception e) {
 
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.category, menu);
     }
 }

@@ -51,13 +51,33 @@ public class ItemAdapter extends BaseAdapter{
             convertView = inflater.inflate(R.layout.item_item,null);
         }
 
-        TextView itemTitle = (TextView) convertView.findViewById(R.id.item_item_title);
-
         //Getting item data for the row
         Item i = itemLists.get(position);
 
         //Set item title
+        TextView itemTitle = (TextView) convertView.findViewById(R.id.item_item_title);
         itemTitle.setText(i.getTitle());
+
+        //Set item category
+        TextView itemCategory = (TextView) convertView.findViewById(R.id.item_item_category);
+        itemCategory.setText(i.getCategory().getTitle());
+
+        //Check type
+        String type = i.getType();
+
+        //Set item price
+        TextView itemPrice = (TextView) convertView.findViewById(R.id.item_item_price);
+        itemPrice.setText("$"+i.getPrice().toString());
+        if(type.equalsIgnoreCase("Expense")){
+            itemPrice.setTextColor(convertView.getResources().getColorStateList(R.color.red));
+        }else{
+            itemPrice.setTextColor(convertView.getResources().getColorStateList(R.color.green));
+        }
+
+
+        //Set item date
+        TextView itemDate = (TextView) convertView.findViewById(R.id.item_item_date);
+        itemDate.setText(i.getDate());
 
         return convertView;
     }

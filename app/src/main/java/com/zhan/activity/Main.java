@@ -21,7 +21,7 @@ import com.zhan.fragment.CategoryFragment;
 import com.zhan.fragment.CommunitiesFragment;
 import com.zhan.fragment.ItemFragment;
 import com.zhan.fragment.HomeFragment;
-import com.zhan.fragment.PhotosFragment;
+import com.zhan.fragment.StatisticFragment;
 import com.zhan.fragment.WhatsHotFragment;
 import com.zhan.models.NavDrawerItem;
 
@@ -183,7 +183,7 @@ public class Main extends Activity {
                 currentFragment = new ItemFragment();
                 break;
             case 3:
-                currentFragment = new PhotosFragment();
+                currentFragment = new StatisticFragment();
                 break;
             case 4:
                 currentFragment = new CommunitiesFragment();
