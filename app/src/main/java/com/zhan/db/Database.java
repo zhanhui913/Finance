@@ -201,7 +201,7 @@ public class Database extends SQLiteOpenHelper{
 
         cursor.close();
         db.close();
-        Log.d(TABLE_CATEGORY,"get all categories "+category.toString());
+        Log.d(TABLE_CATEGORY,"get all categories ");
         return categories;
     }
 
